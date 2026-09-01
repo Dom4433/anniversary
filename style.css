@@ -1,0 +1,210 @@
+/* กำหนดตัวแปรสีพาสเทล */
+:root {
+    --bg-color: #fdf2f4; /* ชมพูอ่อนมาก */
+    --card-bg: #ffffff;
+    --primary-pink: #ffb6c1; /* ชมพูพาสเทล */
+    --text-dark: #5a5a5a; /* เทาเข้ม */
+    --text-light: #888888;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mali', cursive;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ซ่อนทุก Section ไว้ก่อน */
+section {
+    display: none;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* แสดงเฉพาะ Section ที่มี class active */
+section.active {
+    display: flex;
+    justify-content: center;
+}
+
+/* เอฟเฟกต์ Fade In */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* กรอบการ์ดหลัก */
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 182, 193, 0.3);
+    width: 100%;
+    text-align: center;
+}
+
+/* =========================================
+   Section 1: Lock Screen
+   ========================================= */
+.lock-screen {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lock-left, .lock-right {
+    flex: 1;
+    min-width: 250px;
+}
+
+.polaroid {
+    width: 100%;
+    border-radius: 15px;
+    border: 5px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.password-display {
+    font-size: 24px;
+    letter-spacing: 5px;
+    margin: 20px 0;
+    min-height: 35px;
+}
+
+.error-msg {
+    color: red;
+    font-size: 14px;
+    min-height: 20px;
+    margin-bottom: 10px;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.keypad button {
+    background: var(--primary-pink);
+    border: none;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.keypad button:active {
+    transform: scale(0.9);
+}
+
+.keypad button.clear { background: #dcdcdc; color: #555; }
+.keypad button.enter { background: #ff9eb5; }
+
+/* =========================================
+   ปุ่มกดทั่วไป (ปุ่ม Next)
+   ========================================= */
+.btn-next {
+    background: var(--primary-pink);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+.btn-next:hover { background: #ff9eb5; }
+
+/* =========================================
+   Section 2: Timer
+   ========================================= */
+.time-container {
+    font-size: 20px;
+    margin: 30px 0;
+    line-height: 1.8;
+    color: #ff85a2;
+    font-weight: 600;
+}
+
+/* =========================================
+   Section 3: Gallery
+   ========================================= */
+.grid-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+.grid-gallery img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.caption { margin-top: 15px; font-size: 14px; }
+
+/* =========================================
+   Section 4: Love Letter
+   ========================================= */
+.letter-screen .envelope-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.love-text {
+    line-height: 2;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   Section 5: Media
+   ========================================= */
+.coupon-img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.music-player {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+.music-player h2 { font-size: 18px; margin-bottom: 10px; }
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #e0e0e0;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+.progress {
+    width: 40%;
+    height: 100%;
+    background: var(--primary-pink);
+    border-radius: 3px;
+}
+.video-container {
+    border-radius: 15px;
+    overflow: hidden;
+}

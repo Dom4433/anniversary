@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary 💖</title>
+    <!-- โหลดฟอนต์ Mali จาก Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Section 1: Lock Screen -->
+    <section id="sec1" class="active">
+        <div class="card lock-screen">
+            <div class="lock-left">
+                <!-- ใส่รูปคู่ที่เตรียมไว้ในโฟลเดอร์ assets/images -->
+                <img src="assets/images/mylove.jpg" alt="Our Photo" class="polaroid">
+            </div>
+            <div class="lock-right">
+                <h2>🔒 Enter our password</h2>
+                <div class="password-display" id="pass-display">_ _ _ _ _ _</div>
+                <p id="error-msg" class="error-msg"></p>
+                <div class="keypad">
+                    <button onclick="pressKey('1')">1</button>
+                    <button onclick="pressKey('2')">2</button>
+                    <button onclick="pressKey('3')">3</button>
+                    <button onclick="pressKey('4')">4</button>
+                    <button onclick="pressKey('5')">5</button>
+                    <button onclick="pressKey('6')">6</button>
+                    <button onclick="pressKey('7')">7</button>
+                    <button onclick="pressKey('8')">8</button>
+                    <button onclick="pressKey('9')">9</button>
+                    <button class="clear" onclick="clearPass()">C</button>
+                    <button onclick="pressKey('0')">0</button>
+                    <button class="enter" onclick="checkPass()">OK</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Anniversary Timer -->
+    <section id="sec2">
+        <div class="card timer-screen">
+            <h2>เราอยู่ด้วยกันมากี่วันเเล้วน๊าาา? 🤍</h2>
+            <div class="time-container" id="timer-display">
+                <!-- เวลาจะถูกแสดงตรงนี้ด้วย JavaScript -->
+            </div>
+            <button id="btn-next-sec2" class="btn-next" onclick="nextSection(3)">☁️ Dom & You ❤️❤️❤️</button>
+        </div>
+    </section>
+
+    <!-- Section 3: Memory Gallery -->
+    <section id="sec3">
+        <div class="card gallery-screen">
+            <h2>You & Me 💕</h2>
+            <div class="grid-gallery">
+                <!-- เปลี่ยนชื่อไฟล์รูปภาพให้ตรงกับที่คุณมี -->
+                <img src="assets/images/mem1.webp" alt="Memory">
+                <img src="assets/images/mem2.webp" alt="Memory">
+                <img src="assets/images/mem3.webp" alt="Memory">
+                <img src="assets/images/mem4.webp" alt="Memory">
+                <img src="assets/images/mem5.jpg" alt="Memory">
+                <img src="assets/images/mem6.webp" alt="Memory">
+                <img src="assets/images/mem7.jpg" alt="Memory">
+                <img src="assets/images/mem8.jpg" alt="Memory">
+                <img src="assets/images/mem9.jpg" alt="Memory">
+                <img src="assets/images/mem10.jpg" alt="Memory">
+            </div>
+            <p class="caption">I'm so lucky to have u 👇</p>
+            <button class="btn-next" onclick="nextSection(4)">Next 💌</button>
+        </div>
+    </section>
+
+    <!-- Section 4: Love Letter -->
+    <section id="sec4">
+        <div class="card letter-screen">
+            <div class="envelope-icon">💌💌💌</div>
+            <p class="love-text">
+                Happy Anniversary!<br>
+                สุขสันต์วันครบรอบนะครับที่รัก<br>
+                เค้ารู้สึกดีใจมากที่ได้อยู่กับเบ้บเเละมีความสุขที่ได้มีเบ้บอยู่ในชีวิตของเค้า<br>
+                ขอบคุณที่คอยอยู่เคียงข้างกันเสมอไม่ว่าจะดีหรือร้าย<br>
+                ขอให้พวกเรารักกันเเบบนี้ สม่ำเสมอเเบบนี้กันไปเรื่อยๆเลยนะ<br>
+                ไม่ว่าจะเจอปัญหาอะไรเราก็จะผ่านมันไปด้วยกันนะที่รัก<br>
+                น้องดอมรักเบ้บที่สุดในสามโลก<br>
+                💗 Happy Anniversary 💗
+            </p>
+            <button class="btn-next" onclick="nextSection(5)">🔑 Click to unlock it</button>
+        </div>
+    </section>
+
+    <!-- Section 5: Playlist & Media -->
+    <section id="sec5">
+        <div class="card media-screen">
+            <!-- คูปอง -->
+            <img src="assets/images/mem11.jpg" alt="Coupon" class="coupon-img">
+            
+            <!-- เครื่องเล่นเพลงจำลอง -->
+            <div class="music-player">
+                <h2>เพลงที่อยากมอบให้เธอ 🎵</h2>
+                <div class="fake-player">
+                    <div class="player-info">▶️ Our Song - Love</div>
+                    <div class="progress-bar"><div class="progress"></div></div>
+                </div>
+            </div>
+
+            <!-- วิดีโอ Embed (ตัวอย่างจาก YouTube) -->
+            <div class="video-container">
+                <!-- นำโค้ด Embed จาก YouTube หรือ TikTok มาวางแทนที่ iframe นี้ -->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/N9bashij_7c?si=scf9lXVR1x_n_I_J" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
